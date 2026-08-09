@@ -1,71 +1,71 @@
 {
-  "name": "semantic-release-bamboo",
-  "version": "0.1.0",
-  "description": "semantic-release plugin for Bamboo",
-  "homepage": "https://github.com/unional/semantic-release-bamboo",
-  "bugs": {
-    "url": "https://github.com/unional/semantic-release-bamboo/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/unional/semantic-release-bamboo.git"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Homa Wong",
-    "email": "homawong@gmail.com"
-  },
-  "main": "dist-es5/index.js",
-  "typings": "dist-es5/index.d.ts",
-  "files": [
-    "dist-es5",
-    "ts",
-    "!ts/**/*.spec.ts"
-  ],
-  "scripts": {
-    "build": "tsc -p tsconfig.es5.json",
-    "clean": "rimraf dist dist-es5",
-    "coverage": "jest --coverage",
-    "depcheck": "depcheck",
-    "lint": "eslint --ext=js,ts .",
-    "nuke": "yarn clean && rimraf node_modules",
-    "postinstall": "husky install",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable",
-    "test": "jest",
-    "verify": "npm-run-all clean -p build lint coverage depcheck",
-    "watch": "jest --watch"
-  },
-  "dependencies": {
-    "@semantic-release/error": "^4.0.0",
-    "env-ci": "^11.0.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^21.0.0",
-    "@commitlint/config-conventional": "^21.0.0",
-    "@semantic-release/changelog": "^7.0.0",
-    "@semantic-release/git": "^11.0.0",
-    "@semantic-release/github": "^12.0.0",
-    "@semantic-release/npm": "^13.0.0",
-    "@types/jest": "30.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "depcheck": "^1.4.3",
-    "eslint": "10.8.1",
-    "eslint-plugin-harmony": "^7.1.0",
-    "husky": "^9.0.0",
-    "jest": "30.4.2",
-    "jest-validate": "30.4.1",
-    "jest-watch-suspend": "^1.1.2",
-    "jest-watch-toggle-config": "^3.0.0",
-    "jest-watch-typeahead": "^3.0.0",
-    "npm-run-all2": "^9.0.0",
-    "pinst": "^3.0.0",
-    "rimraf": "^6.0.0",
-    "semantic-release": "^25.0.0",
-    "ts-jest": "^29.0.0",
-    "typedoc": "^0.28.0",
-    "typedoc-plugin-extras": "^4.0.0",
-    "typescript": "7.0.2"
-  },
-  "packageManager": "yarn@4.18.0"
+	"name": "semantic-release-bamboo",
+	"version": "0.1.2",
+	"description": "semantic-release plugin for Bamboo",
+	"homepage": "https://github.com/cyberuni/semantic-release-bamboo",
+	"bugs": {
+		"url": "https://github.com/cyberuni/semantic-release-bamboo/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cyberuni/semantic-release-bamboo.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Homa Wong",
+		"email": "homawong@gmail.com"
+	},
+	"main": "dist-es5/index.js",
+	"typings": "dist-es5/index.d.ts",
+	"files": [
+		"dist-es5",
+		"ts",
+		"!ts/**/*.spec.ts"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.es5.json",
+		"check": "biome check",
+		"check:fix": "biome check --fix",
+		"clean": "rimraf dist dist-es5",
+		"coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+		"cs": "changeset",
+		"depcheck": "depcheck",
+		"nuke": "pnpm clean && rimraf node_modules",
+		"postinstall": "husky install",
+		"postpack": "pinst --enable",
+		"prepack": "pinst --disable",
+		"release": "changeset publish",
+		"test": "NODE_OPTIONS=--experimental-vm-modules jest",
+		"verify": "npm-run-all clean -p build check coverage depcheck",
+		"version": "changeset version",
+		"watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch"
+	},
+	"dependencies": {
+		"@semantic-release/error": "^4.0.0",
+		"env-ci": "^11.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.7",
+		"@changesets/cli": "^2.31.1",
+		"@commitlint/cli": "^21.0.0",
+		"@commitlint/config-conventional": "^21.0.0",
+		"@repobuddy/biome": "^2.3.1",
+		"@types/jest": "30.0.0",
+		"@types/node": "^26.2.0",
+		"depcheck": "^1.4.3",
+		"husky": "^9.0.0",
+		"jest": "30.4.2",
+		"jest-validate": "30.4.1",
+		"jest-watch-suspend": "^1.1.2",
+		"jest-watch-toggle-config": "^3.0.0",
+		"jest-watch-typeahead": "^3.0.0",
+		"npm-run-all2": "^9.0.0",
+		"pinst": "^3.0.0",
+		"rimraf": "^6.0.0",
+		"ts-jest": "^29.0.0",
+		"typedoc": "^0.28.0",
+		"typedoc-plugin-extras": "^4.0.0",
+		"typescript": "5.9.3"
+	},
+	"packageManager": "pnpm@11.20.0"
 }

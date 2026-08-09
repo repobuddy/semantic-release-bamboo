@@ -2,34 +2,32 @@ import SRError from '@semantic-release/error'
 import envCI from 'env-ci'
 
 export interface PluginConfig {
-  branch: string,
-  repositoryUrl: string,
-  ci: boolean
+	branch: string
+	repositoryUrl: string
+	ci: boolean
 }
 
 export interface Params {
-  options: {
-    branch: string,
-    repositoryUrl: string,
-    ci: boolean,
-    dryRun: boolean
-  },
-  logger: {
-    log: (...args: any[]) => void,
-    error: (...args: any[]) => void
-  }
+	options: {
+		branch: string
+		repositoryUrl: string
+		ci: boolean
+		dryRun: boolean
+	}
+	logger: {
+		log: (...args: any[]) => void
+		error: (...args: any[]) => void
+	}
 }
 
 export function verifyConditions(pluginConfig: PluginConfig, params: Params) {
-  console.info('pluginConfig', pluginConfig)
-  console.info('params', params)
-  const env = envCI()
-  console.info(env)
+	console.info('pluginConfig', pluginConfig)
+	console.info('params', params)
+	const env = envCI()
+	console.info(env)
 
-  if (!pluginConfig.ci)
-    throw new SRError('not running on CI', 'EVERIFYCONDITIONS')
-  if (env.service !== 'bamboo')
-    throw new SRError('not running on bamboo', 'EVERIFYCONDITIONS')
+	if (!pluginConfig.ci) throw new SRError('not running on CI', 'EVERIFYCONDITIONS')
+	if (env.service !== 'bamboo') throw new SRError('not running on bamboo', 'EVERIFYCONDITIONS')
 }
 
 // module.exports = function (pluginConfig, config, cb) {

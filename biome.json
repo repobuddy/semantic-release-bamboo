@@ -1,0 +1,12 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.7/schema.json",
+	"extends": ["@repobuddy/biome/recommended"],
+	"files": {
+		"includes": ["!**/coverage", "!**/dist", "!**/dist-es5", "!**/node_modules", "!pnpm-lock.yaml", "!skills-lock.json"]
+	},
+	"javascript": {
+		"formatter": {
+			"trailingCommas": "none"
+		}
+	}
+}
