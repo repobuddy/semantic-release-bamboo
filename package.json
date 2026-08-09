@@ -1,6 +1,6 @@
 {
 	"name": "semantic-release-bamboo",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "semantic-release plugin for Bamboo",
 	"homepage": "https://github.com/cyberuni/semantic-release-bamboo",
 	"bugs": {
