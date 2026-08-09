@@ -1,23 +1,19 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "esModuleInterop": true,
-    "lib": [
-      "es2015"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "removeComments": false,
-    "sourceMap": true,
-    "strict": true
-  },
-  "files": [
-    "ts/index.ts"
-  ],
-  "include": [
-    "typings"
-  ]
+	"compilerOptions": {
+		"declaration": true,
+		"esModuleInterop": true,
+		"lib": ["es2015"],
+		"module": "node18",
+		"newLine": "LF",
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"removeComments": false,
+		"rootDir": "ts",
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"types": ["node", "jest"]
+	},
+	"files": ["ts/index.ts"],
+	"include": ["typings"]
 }

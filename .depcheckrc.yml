@@ -1,9 +1,16 @@
+# One package per line, no wildcards beyond the scoped families: a blanket ignore hides
+# genuinely dead dependencies.
 ignores:
+  # referenced by commitlint.config.cjs, not by source
   - "@commitlint/*"
-  - '@semantic-release/*'
-  - "@size-limit/*"
+  # referenced by biome.json's `extends`, not by source
+  - "@repobuddy/biome"
+  # used as a binary in `scripts`, never imported
+  - "@changesets/cli"
+  - rimraf
+  # type-only / test-runner packages jest loads by convention
   - "@types/jest"
+  - "@types/node"
   - jest-*
-  - semantic-release
   - ts-jest
   - typedoc*

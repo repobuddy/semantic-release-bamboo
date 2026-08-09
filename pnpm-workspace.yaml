@@ -1,0 +1,4 @@
+# pnpm blocks dependency build scripts by default and pnpm 11 turns an unapproved one
+# into a non-zero exit, not a warning. unrs-resolver is eslint 10's native resolver.
+allowBuilds:
+  unrs-resolver: true
