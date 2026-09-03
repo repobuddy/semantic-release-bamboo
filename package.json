@@ -2,13 +2,13 @@
 	"name": "semantic-release-bamboo",
 	"version": "0.1.3",
 	"description": "semantic-release plugin for Bamboo",
-	"homepage": "https://github.com/cyberuni/semantic-release-bamboo",
+	"homepage": "https://github.com/repobuddy/semantic-release-bamboo",
 	"bugs": {
-		"url": "https://github.com/cyberuni/semantic-release-bamboo/issues"
+		"url": "https://github.com/repobuddy/semantic-release-bamboo/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/cyberuni/semantic-release-bamboo.git"
+		"url": "https://github.com/repobuddy/semantic-release-bamboo.git"
 	},
 	"license": "MIT",
 	"author": {
