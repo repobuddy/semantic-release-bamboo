@@ -5,10 +5,10 @@ export default {
 	// loads them as CJS and dies on `Unexpected token 'export'`.
 	extensionsToTreatAsEsm: ['.ts'],
 	transform: {
-		// `module: esnext` is required here: the build tsconfig emits CJS for this
-		// (non-"type":"module") package, and ts-jest would otherwise hand jest's ESM
-		// runtime a CJS module — which fails with `exports is not defined`.
-		'^.+\\.tsx?$': ['ts-jest', { useESM: true, tsconfig: { module: 'esnext' } }]
+		// The package is `"type": "module"` and the build tsconfig is nodenext, so ts-jest
+		// already emits real ESM; `useESM` just tells it to keep the ESM interop helpers
+		// instead of downlevelling to CJS for jest's default runtime.
+		'^.+\\.tsx?$': ['ts-jest', { useESM: true }]
 	},
 	moduleNameMapper: {
 		'^(\\.{1,2}/.*)\\.js$': '$1'

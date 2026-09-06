@@ -1,4 +1,4 @@
-import { verifyConditions } from './index'
+import { verifyConditions } from './index.js'
 
 test.skip('dummy', () => {
 	verifyConditions({} as any, {} as any)

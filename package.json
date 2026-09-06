@@ -15,18 +15,24 @@
 		"name": "Homa Wong",
 		"email": "homawong@gmail.com"
 	},
-	"main": "dist-es5/index.js",
-	"typings": "dist-es5/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
 	"files": [
-		"dist-es5",
+		"dist",
 		"ts",
 		"!ts/**/*.spec.ts"
 	],
 	"scripts": {
-		"build": "tsc -p tsconfig.es5.json",
+		"build": "tsc -p tsconfig.build.json",
 		"check": "biome check",
 		"check:fix": "biome check --fix",
-		"clean": "rimraf dist dist-es5",
+		"clean": "rimraf dist",
 		"coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
 		"cs": "changeset",
 		"depcheck": "depcheck",
