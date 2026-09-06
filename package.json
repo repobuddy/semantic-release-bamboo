@@ -70,5 +70,8 @@
 		"typedoc-plugin-extras": "^4.0.0",
 		"typescript": "5.9.3"
 	},
-	"packageManager": "pnpm@12.3.4"
+	"packageManager": "pnpm@12.3.4",
+	"engines": {
+		"node": "^20.19.0 || ^22.13.0 || >=24"
+	}
 }
