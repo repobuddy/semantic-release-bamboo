@@ -2,8 +2,10 @@
 	"compilerOptions": {
 		"declaration": true,
 		"esModuleInterop": true,
-		"lib": ["es2015"],
-		"module": "node18",
+		"isolatedModules": true,
+		"lib": ["es2023"],
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
 		"newLine": "LF",
 		"noUnusedLocals": true,
 		"noUnusedParameters": false,
