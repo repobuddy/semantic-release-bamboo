@@ -26,7 +26,8 @@
 	"files": [
 		"dist",
 		"ts",
-		"!ts/**/*.spec.ts"
+		"!ts/**/*.spec.ts",
+		"CHANGELOG.md"
 	],
 	"scripts": {
 		"build": "tsc -p tsconfig.build.json",
