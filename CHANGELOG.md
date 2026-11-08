@@ -1,5 +1,11 @@
 # semantic-release-bamboo
 
+## 1.0.1
+
+### Patch Changes
+
+- a8c757a: Include `CHANGELOG.md` in the published package.
+
 ## 1.0.0
 
 ### Major Changes
